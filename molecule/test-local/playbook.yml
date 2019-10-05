@@ -54,6 +54,8 @@
         namespace: '{{ namespace }}'
         definition: "{{ lookup('template', '/'.join([deploy_dir, 'operator.yaml'])) }}"
 
+# TODO: also need to start up AMQP so that SG has something to cnnect to
+
     - name: Create the smartgateway.infra.watch/v1alpha1.SmartGateway
       k8s:
         state: present
